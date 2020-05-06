@@ -12,6 +12,7 @@ if($mysqli->connect_error){
  die("Connection failed:" . $mysqli->connect_error);
 }
     $email = $_POST['email'];
+    $contact = $_POST['contact']
     $pass = $_POST['pass'];
     $pass1= $_POST['pass1'];
 
@@ -22,7 +23,7 @@ if($mysqli->connect_error){
     }
     else{
     $passfinal = md5($pass);
-    $q="INSERT INTO user (email,pass) values ('$email','$passfinal')";
+    $q="INSERT INTO user (email,pass,contact) values ('$email','$passfinal','$contact')";
     
     if ($mysqli->query($q) === TRUE){
         echo "SUCCESS";
