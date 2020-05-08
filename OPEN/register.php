@@ -11,6 +11,7 @@ $mysqli = new mysqli($server, $user, $password, $dbname);
 if($mysqli->connect_error){
  die("Connection failed:" . $mysqli->connect_error);
 }
+    $name = $_POST['name'];
     $email = $_POST['email'];
     $contact = $_POST['contact']
     $pass = $_POST['pass'];
@@ -23,7 +24,7 @@ if($mysqli->connect_error){
     }
     else{
     $passfinal = md5($pass);
-    $q="INSERT INTO user (email,pass,contact) values ('$email','$passfinal','$contact')";
+    $q="INSERT INTO user (name,email,pass,contact) values ('$name','$email','$passfinal','$contact')";
     
     if ($mysqli->query($q) === TRUE){
         echo "SUCCESS";
