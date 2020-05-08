@@ -24,7 +24,7 @@ if($mysqli->connect_error){
     }
     else{
     $passfinal = md5($pass);
-    $q="INSERT INTO user (name,email,pass,contact) values ('$name','$email','$passfinal','$contact')";
+    $q="INSERT INTO user (name,email,contact,pass) values ('$name','$email','$contact','$passfinal')";
     
     if ($mysqli->query($q) === TRUE){
         echo "SUCCESS";
